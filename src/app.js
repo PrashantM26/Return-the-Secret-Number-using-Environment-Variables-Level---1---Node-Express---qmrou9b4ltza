@@ -15,6 +15,8 @@ app.get('/api/get-env', (req, res) => {
     
         if (secretNumber === undefined) {
           res.status(404).json({ err: 'Not Found' });
+          /*res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ err: 'Not Found' }));*/
         } else {
           res.status(200).json({ number: secretNumber });
         }
